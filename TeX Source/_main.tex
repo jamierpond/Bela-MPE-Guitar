@@ -1,0 +1,83 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{matrix,calc}
+\usepackage{graphicx}
+\usepackage{color,soul}
+\usepackage{svg}
+\usepackage{subfigure}
+\usepackage{mdframed}
+\usepackage{natbib}
+\usepackage{verbatimbox}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage[hyphens]{url}
+% \usepackage[hidelinks]{hyperref}
+% \hypersetup{breaklinks=true}
+% \urlstyle{same}
+\usepackage{cite}
+
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\par\singlespacing\small}
+
+\usepackage[toc,page]{appendix}
+
+\lstset{language=C++,
+        basicstyle=\ttfamily\small,
+        keywordstyle=\color{blue}\ttfamily\small,
+        stringstyle=\color{red}\ttfamily\small,
+        commentstyle=\color{green}\ttfamily\small,
+        morecomment=[l][\color{magenta}]{\#}
+}
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Augmenting the guitar as an MPE controller with capacitive touch sensors}
+
+\author{\IEEEauthorblockN{Jamie R. Pond}
+\IEEEauthorblockA{\textit{School of Electronic Engineering and Computer Science} \\
+\textit{Queen Mary, University of London}\\
+London, United Kingdom \\
+ec20768@qmul.ac.uk}
+}
+
+\maketitle
+
+\input{Sections/0_abstract}
+
+\input{Sections/1_intro}
+
+\input{Sections/2 _literature_review}
+
+\input{Sections/3_protoype_development}
+
+\input{Sections/4_evaluation}
+
+\input{Sections/5_discussion_conclusion}
+
+\input{Sections/7_acknowledgement}
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{IEEEabrv,references}
+% \Urlmuskip=0mu plus 1mu\relax
+\bibliographystyle{agsm}
+\bibliography{references}
+
+\input{Sections/appendices}
+
+
+\end{document}
+

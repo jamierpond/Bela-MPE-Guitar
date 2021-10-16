@@ -1,0 +1,74 @@
+
+% \newcommand{\trillWidth}{101.6mm / 1.2}
+% \newcommand{\trillHeight}{21.5mm / 1.2}
+% \newcommand{\NumStrings}{6}
+% \newcommand{\StringWidth}{\trillWidth/\NumStrings}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \usetikzlibrary{shapes.misc, positioning, svg.path}
+    
+    \fill [black,draw]
+  {[rounded corners=6](0,0) --
+  ++(\trillWidth, 0)  --
+  ++(0, \trillHeight) --
+  ++(-\trillWidth, 0) --
+  cycle
+  {}};
+  \draw[white, thick, dashed] (0, 0) -- (0 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*1, 0) -- (\StringWidth*1 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*2, 0) -- (\StringWidth*2 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*3, 0) -- (\StringWidth*3 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*4, 0) -- (\StringWidth*4 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*5, 0) -- (\StringWidth*5 ,\trillHeight);
+   
+   \node[draw,circle, fill=red, text=white] at (\StringWidth/2 + \StringWidth*3,\trillHeight/2) {0.63};
+    \end{tikzpicture}
+    
+     \centering
+    \begin{tikzpicture}
+    \usetikzlibrary{shapes.misc, positioning, svg.path}
+    
+    \fill [black,draw]
+  {[rounded corners=6](0,0) --
+  ++(\trillWidth, 0)  --
+  ++(0, \trillHeight) --
+  ++(-\trillWidth, 0) --
+  cycle
+  {}};
+  \draw[white, thick, dashed] (0, 0) -- (0 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*1, 0) -- (\StringWidth*1 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*2, 0) -- (\StringWidth*2 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*3, 0) -- (\StringWidth*3 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*4, 0) -- (\StringWidth*4 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*5, 0) -- (\StringWidth*5 ,\trillHeight);
+   
+   \node[draw,circle, fill=red, text=white] at (\StringWidth/2 + \StringWidth*0,\trillHeight/2) {0.08};
+   
+    \end{tikzpicture}
+    
+     \centering
+    \begin{tikzpicture}
+    \usetikzlibrary{shapes.misc, positioning, svg.path}
+    
+    \fill [black,draw]
+  {[rounded corners=6](0,0) --
+  ++(\trillWidth, 0)  --
+  ++(0, \trillHeight) --
+  ++(-\trillWidth, 0) --
+  cycle
+  {}};
+  \draw[white, thick, dashed] (0, 0) -- (0 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*1, 0) -- (\StringWidth*1 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*2, 0) -- (\StringWidth*2 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*3, 0) -- (\StringWidth*3 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*4, 0) -- (\StringWidth*4 ,\trillHeight);
+  \draw[white, thick, dashed] (\StringWidth*5, 0) -- (\StringWidth*5 ,\trillHeight);
+   
+   \node[draw,circle, fill=red, text=white] at (\StringWidth/2 + \StringWidth*5,\trillHeight/2) {0.91};
+   
+    \end{tikzpicture}
+    
+    \caption{Example of sensors with touch locations in the relevant string zones. The vertical dashed lines represent the string boundaries $\mathbf{B}_n$, \textit{not} digital strings. }
+    \label{fig:trill_touches}
+\end{figure}

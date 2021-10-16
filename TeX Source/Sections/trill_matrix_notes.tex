@@ -1,0 +1,34 @@
+\newcommand{\higl}[1]{\textit{\textbf{#1}}}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \matrix (midi) [draw,matrix of math nodes]
+    {
+    40 & \higl{45} & \higl{50} & \higl{55} & \higl{59} & \higl{64} \\
+    41 & \higl{46} & \higl{51} & \higl{56} & \higl{60} & \higl{65} \\
+    42 & 47 & 52 & 57 & 61 & 66 \\
+    43 & 48 & 53 & 58 & 62 & 67 \\
+    44 & 49 & 54 & 59 & 63 & 68 \\
+    \higl{45} & \higl{50} & \higl{55} & \higl{60} & \higl{64} & 69 \\
+    \higl{46} & \higl{51} & \higl{56} & \higl{61} & \higl{65} & 70 \\
+    };
+    
+    \matrix (cantor) [draw,matrix of math nodes] at ($(midi.east)+(2.3, 0.0)$)
+    {
+    0&	1&	3&	6&	10&	15& \\
+    2&	4&	7&	11&	16&	22&\\
+    5&	8&	12&	17&	23&	30&\\
+    9&	13&	18&	24&	31&	39&\\
+    14&	19&	25&	32&	40&	49&\\
+    20&	26&	33&	41&	50&	60&\\
+    27&	34&	42&	51&	61&	72&\\
+    };
+    
+    \node[rotate=90] at (-2.3cm, 0) {Fret Index};
+    \node at (-0.0cm, 2.1cm) {a. String Index (MIDI)};
+    \node at (4.2cm, 2.1cm)  {b. String Index (Cantor)};
+    
+    \end{tikzpicture}
+    \caption{Demonstration that there are not unique mappings from fret-string locations to MIDI notes, which therefore cannot be used as unique identifiers for notes. Highlighted numbers are non-unique. Diagram represent the first seven frets. }
+    \label{fig:midicantormatrix}
+\end{figure}

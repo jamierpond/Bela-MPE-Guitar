@@ -1,0 +1,39 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[every node/.style={anchor=north east, fill=white, minimum width=0.5cm, minimum height=5mm}]
+
+
+
+% OFFSETS
+\matrix (mA) [draw,matrix of math nodes]
+{
+0.00 & 0.00 & 0.00 & \textbf{0.63} & 0.00 & 0.00 \\
+\textbf{0.08} & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+0.00 & 0.00 & 0.00 & 0.00 & 0.00 & \textbf{0.91} \\
+};
+
+% ONSETS
+\matrix (mB) [draw,matrix of math nodes] at ($(mA.south west)+(2.9,0.7)$)
+{
+0.00 & 0.00 & 0.00 & \textbf{0.50} & 0.00 & 0.00 \\
+\textbf{0.50} & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+0.00 & 0.00 & 0.00 & 0.00 & 0.00 & \textbf{0.50} \\
+};
+
+% C
+\matrix (mC) [draw,matrix of math nodes] at ($(mB.south west)+(2.5,0.7)$)
+{
+0 & 0 & 0 & \textbf{1} & 0 & 0 \\
+\textbf{1} & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & \textbf{1} \\
+};
+
+\node[align=left] at ($(mC.south east) + (-0.4cm, -0cm)$) {\texttt{isActive}};
+\node[align=left] at ($(mB.south east) + (-0.5cm, -0cm)$) {\texttt{touchSize}};
+\node[align=left] at ($(mA.south east) + (0.6cm, -0cm)$) {\texttt{touchLocation}};
+\end{tikzpicture}
+
+\caption{A visual representation of the updated data structure used to represent touch information. }
+\label{fig:new_struct}
+
+\end{figure}

@@ -1,0 +1,77 @@
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+  
+\begin{figure}[h]
+    \centering
+    
+    \begin{tikzpicture}[scale=2.2]
+    \clip(-0.60,-0.60) rectangle (3.40,3.45);
+    \tkzInit[xmax=4,ymax=4,xmin=0,ymin=0]
+    \tkzGrid
+    \tkzAxeXY
+    \node at (1.75, -0.5){\large $k_1$};
+    \node[] at (-0.5, 1.75){\large $k_2$};
+    
+    % Draws the first blue line and red circle.
+    \draw[thick,->-=.5,blue] (0,0) -- (1,0);
+    \filldraw (0,0)[red] circle (1.7pt);
+    
+    % <THIS DRAWS THE BLUE LINES>
+    \newcounter{N}{0}
+    \foreach \n in {1,...,15} {
+        \foreach \i in {0,...,\value{N}}{
+            \draw[thick, ->-=.5,blue] (\n - \i, \i) -- (\n - 1 - \i ,\i + 1);
+        }
+        \stepcounter{N}
+        \draw[thick, ->-=.5,blue] (0,\n) -- (\n+1,0); %IMPORTANT
+    } % END <THIS DRAWS THE BLUE LINES>
+    
+    % <THIS DRAWS THE NUMBER AND RED DOTS>
+    % These are 'registers' used to calculate the cantor number. 
+    \setcounter{N}{3}
+    \newcounter{cn}{0}
+    \newcounter{r1}{0}
+    \newcounter{r2}{0}
+    \newcounter{r3}{0}
+    \foreach \n in {0,...,3} {
+        \foreach \i in {0,...,\value{N}}{
+            % Fill circles. 
+            \filldraw (\i, \n)[red] circle (1.5pt);
+            
+            %% CALCULATE CANTOR NUMBER
+            % Reset registers. 
+            \setcounter{cn}{0}
+            \setcounter{r1}{\i}
+            \setcounter{r2}{\n}
+            \setcounter{r3}{0}
+            
+            % cn = (k1 + k2 + 1)
+            \addtocounter{cn}{\value{r1}}
+            \addtocounter{cn}{\value{r2}}
+            \addtocounter{cn}{1}
+            
+            % r3 = (k1 + k2)
+            \addtocounter{r3}{\value{r1}}
+            \addtocounter{r3}{\value{r2}}
+            
+            % cn *= r3
+            \multiply\value{cn} by \value{r3}
+            
+            % cn /= 2
+            \divide\value{cn} by 2
+            
+            % cn += k2
+            \addtocounter{cn}{\value{r2}}
+            %% END CALCULATE CANTOR NUMBER
+            
+            % Display cantor number. 
+            \node at (\i + 0.125, \n + 0.125){\arabic{cn}};
+        }
+    } % END <THIS DRAWS THE NUMBERS AND RED DOTS>
+   
+\end{tikzpicture}
+    \caption{Visualization of the two element Cantor pairing algorithm.}
+    \label{fig:my_label}
+\end{figure}
